@@ -9,7 +9,7 @@ class AddressBook
 
   def add_entry(name, phone_number, email)
     index = 0
-    
+
     @entries.each do |entry|
       if name < entry.name
         break
@@ -30,6 +30,10 @@ class AddressBook
 
       @entries.delete(delete_entry)
     end
+  end
+
+  def display_entry(display_num)
+    puts @entries[display_num]
   end
 
 end
