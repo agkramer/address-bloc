@@ -63,15 +63,17 @@ class MenuController
   end
 
   def view_entry_by_number
-    system "clear"
-    print "What entry number would you like to display?"
-    display_num = gets.chomp
-    puts "You selected entry #{display_num}"
+    print "Entry number to display: "
+    selection = gets.chomp.to_i - 1
 
-    if display > 2
-      puts "Sorry, there are not that many records."
+    if selection < @address_book.entries.count
+      puts @address_book.entries[selection]
+      puts "Press enter to return to the main menu"
+      gets.chomp
+      system "clear"
     else
-      @address_book.display_entry(display_num)
+      puts "#{selection} is not a valid input"
+      view_entry_by_number
     end
 
   end

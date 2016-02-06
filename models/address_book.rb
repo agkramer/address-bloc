@@ -32,8 +32,4 @@ class AddressBook
     end
   end
 
-  def display_entry(display_num)
-    puts @entries[display_num]
-  end
-
 end
