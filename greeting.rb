@@ -1,5 +1,5 @@
 greeting = ARGV.shift
 
 ARGV.each do |name|
-  "#{greeting} #{name}"
+  p "#{greeting} #{name}"
 end
